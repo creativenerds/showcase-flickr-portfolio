@@ -1,0 +1,43 @@
+body {
+    background: $background;
+}
+
+.container {
+    width: 1190px;
+    margin: 0 auto;
+    @include breakpoint(desktop) {
+        width: 960px;
+    }
+    @include breakpoint(tablet) {
+        width: 97%;
+    }
+    @include breakpoint(mobile) {
+        width: 95%;
+    }
+}
+
+/* animation transition*/
+a,
+img {
+    -o-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    outline: 0;
+}
+
+h1, h2, h3, p {
+    font-family: $main-font;
+}
+
+/*Selection*/
+::-moz-selection {
+    background: #2fb1fe;
+    color: #fff;
+}
+
+::selection {
+    background: #2fb1fe;
+    color: #fff
+}

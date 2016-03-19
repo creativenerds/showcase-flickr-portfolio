@@ -1,0 +1,127 @@
+.leading-content {
+    font-size: 33px;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+    line-height: 45px;
+    padding: 25px 0;
+}
+
+// mixins
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+// Content //
+.grid {
+    // both masonry and column
+    display: none; // hide on init
+    width: 100%;
+    .wrap {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+    .cell {
+        display: inline-block;
+        width: 35.5rem;
+        margin: .5rem;
+        background: $box-color;
+        border: 1px solid #dde7e7;
+        padding: 10px 10px 0 10px;
+        &:hover {
+            box-shadow: 0px 0px 7px 0px rgb(206, 206, 206);
+        }
+        @include breakpoint(large-desktop) {
+            width: 23%;
+            height: auto;
+        }
+        @include breakpoint(desktop) {
+            width: 47%;
+            height: auto;
+        }
+        @include breakpoint(tablet) {
+            width: 47%;
+            height: auto;
+        }
+        @include breakpoint(mobile) {
+            width: 100%;
+        }
+        img {
+            width: 34rem;
+            height: auto;
+            opacity: 1;
+            transition: opacity .1s;
+            @include breakpoint(large-desktop) {
+                width: 100%;
+            }
+            @include breakpoint(desktop) {
+                width: 100%;
+            }
+            @include breakpoint(tablet) {
+                width: 100%;
+            }
+            @include breakpoint(mobile) {
+                width: 95%;
+                height: auto;
+                padding-right: 1%;
+            }
+            &:hover {
+                opacity: 0.8;
+                -webkit-filter: grayscale(1);
+                filter: grayscale(1);
+                cursor: pointer;
+            }
+        }
+        .caption {
+            font-size: 19px;
+            text-align: center;
+            font-family: $main-font;
+            padding: 25px;
+        }
+    }
+}
+
+// FLEXBOX SPECIFIC STYLE //
+#column-grid {
+    &.active {
+        display: block;
+        column-count: 3;
+        column-gap: 10px;
+        column-fill: auto;
+        @include breakpoint(desktop) {
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            column-count: 4;
+        }
+        @include breakpoint(tablet) {
+            #column-grid.active {
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+                column-count: 2
+            }
+            @include breakpoint(mobile) {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1
+            }
+        }
+        .cell {
+            display: inline-block;
+        }
+    }
+}
+
+#masonry-grid {
+    &.active {
+        display: block;
+    }
+}

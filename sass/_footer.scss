@@ -1,0 +1,26 @@
+#footer{
+    display: block;
+    text-align: center;
+    background: $primary-color;
+    padding: 30px 0;
+    color: $secondary-color;
+    overflow: hidden;
+}
+
+.copyright{
+    float: left;
+    padding-left: 10px;
+}
+
+.back-to-top{
+    float: right;
+    padding-right: 10px;
+    a{
+        color:$secondary-color;
+        text-decoration: none;
+    }
+    a:hover{
+        color:$secondary-color;
+        text-decoration: underline;
+    }
+}
