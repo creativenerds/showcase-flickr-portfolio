@@ -544,7 +544,7 @@ h1, h2, h3, p {
 @media (max-width: 767px) {
   /* line 33, ../sass/_maincontent.scss */
   .grid .cell {
-    width: 100%;
+    width: 95%;
   }
 }
 /* line 58, ../sass/_maincontent.scss */
